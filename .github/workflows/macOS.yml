@@ -23,7 +23,18 @@ jobs:
         git config --global color.ui true
         git config --global credential.helper store
         echo "https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
-        
+      
+    - name: Settings up everything for you 
+      run: |
+         
+      
+      
+      
+      
+      
+      
+      
+      
     - name: Start SSH via ngrok
       continue-on-error: true
       timeout-minutes: 340
