@@ -2,6 +2,8 @@
 sudo hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 220g ~/android.dmg.sparseimage
 sudo hdiutil attach ~/android.dmg.sparseimage -mountpoint /Volumes/android
 
+s - runner
+
 rm -f /Applications/Xcode.app 2>/dev/null
 # If Xcode 12.3 is not available in /Applications/, use the latest one and replace the addresses
 sudo xcode-select -s /Applications/Xcode_12.3.app/Contents/Developer
