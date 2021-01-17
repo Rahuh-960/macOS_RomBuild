@@ -1,0 +1,37 @@
+name: MacOS SSH to GitHub Actions
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore: 'README.md'
+  workflow_dispatch:
+
+jobs:
+  ssh:
+    runs-on: macos-11.0
+
+    env:
+      # Change These If You Are Forking The Repo
+      GitHubMail: "jainsamyak2002.sj@gmail.com"
+      GitHubName: "Samyak"
+
+    steps:
+    - name: Set Git Configs & Secrets
+      run: |
+        git config --global user.email ${GitHubMail}
+        git config --global user.name ${GitHubName}
+        git config --global color.ui true
+        git config --global credential.helper store
+        echo "https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
+        
+    - name: Start SSH via tmate
+      uses: P3TERX/ssh2actions@main
+      
+//    - name: Self Looping
+//      run: |
+//        git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} loop
+//        cd loop || exit 1
+//        echo $(( RANDOM - ( RANDOM % RANDOM ) )) > looper.txt
+//        git add looper.txt
+//       git commit -m "Looping at $(date -u +%D-%T%P)"
+//        git push -q https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:main
