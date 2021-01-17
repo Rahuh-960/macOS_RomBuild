@@ -1,3 +1,5 @@
+
+#!/bin/bash 
 # creating a filesystem of 220GB
 sudo hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 220g ~/android.dmg.sparseimage
 sudo hdiutil attach ~/android.dmg.sparseimage -mountpoint /Volumes/android
