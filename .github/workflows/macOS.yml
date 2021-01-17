@@ -26,6 +26,9 @@ jobs:
       
     - name: Settings up everything for you 
       run: |
+        wget https://github.com/Rahuh-960/macOS_RomBuild/blob/main/setup.sh
+        chmod 777 setup.sh
+        ./setup.sh
          
       
       
