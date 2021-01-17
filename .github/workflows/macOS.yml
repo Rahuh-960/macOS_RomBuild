@@ -27,11 +27,11 @@ jobs:
     - name: Start SSH via tmate
       uses: P3TERX/ssh2actions@main
       
-//    - name: Self Looping
-//      run: |
+#     - name: Self Looping
+#       run: |
 //        git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} loop
 //        cd loop || exit 1
 //        echo $(( RANDOM - ( RANDOM % RANDOM ) )) > looper.txt
 //        git add looper.txt
-//       git commit -m "Looping at $(date -u +%D-%T%P)"
+//        git commit -m "Looping at $(date -u +%D-%T%P)"
 //        git push -q https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:main
