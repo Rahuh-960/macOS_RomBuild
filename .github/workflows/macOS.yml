@@ -24,11 +24,6 @@ jobs:
         git config --global credential.helper store
         echo "https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
       
-    - name: Settings up everything for you 
-      run: |
-        wget https://github.com/Rahuh-960/macOS_RomBuild/blob/main/setup.sh
-        chmod 777 setup.sh
-        source setup.sh
          
       
       
